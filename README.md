@@ -1,4 +1,5 @@
-Repositório com comandos básicos via cli da Amazon DynamoDB para entrega de projeto bootcamp DIO
+Repositório com comandos básicos via cli da Amazon DynamoDB para entrega de projeto bootcamp DIO.
+Esse repositório teve como base o repositório https://github.com/cassianobrexbit/dio-live-dynamodb
 
 ### Recursos necessários
   - Acesso ao Amazon DynamoDB
