@@ -1,0 +1,64 @@
+{
+  "Movies": [
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "Interstellar"},
+          "Director": {"S": "Christopher Nolan"},
+          "ReleaseDate": {"N": "2014"},
+          "Producer": {"S": "Legendary Pictures"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "The Dark Knight"},
+          "Director": {"S": "Christopher Nolan"},
+          "ReleaseDate": {"N": "2008"},
+          "Producer": {"S": "Warner Bros. Pictures"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "Inception"},
+          "Director": {"S": "Christopher Nolan"},
+          "ReleaseDate": {"N": "2010"},
+          "Producer": {"S": "Legendary Pictures"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "The Matrix"},
+          "Director": {"S": "Lana Wachowski, Lilly Wachowski"},
+          "ReleaseDate": {"N": "1999"},
+          "Producer": {"S": "Warner Bros. Pictures"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "Blade Runner 2049"},
+          "Director": {"S": "Denis Villeneuve"},
+          "ReleaseDate": {"N": "2017"},
+          "Producer": {"S": "Warner Bros. Pictures"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "Title": {"S": "Mad Max: Fury Road"},
+          "Director": {"S": "George Miller"},
+          "ReleaseDate": {"N": "2015"},
+          "Producer": {"S": "Warner Bros. Pictures"}
+        }
+      }
+    }
+  ]
+}
