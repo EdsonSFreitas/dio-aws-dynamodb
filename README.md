@@ -9,20 +9,21 @@ Esse repositório teve como base o repositório https://github.com/cassianobrexb
 ### Acesso via AWS CLI:
 - Você pode usar o AWS CloudShell, que é web;
 - Baixar o awscliv2.zip e instalá-lo na sua distribuição Linux - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html;
-- Criar a credencial via Identity and Access Management (IAM) (Fiz dessa forma mais simples apenas para essa entrega do projeto DIO).
+- Criar a credencial via Identity and Access Management (IAM) que irá gerar o "AWS Access Key ID" e o "AWS Secret Access Key". Esse foi o método de autenticação que eu utilizei, mas existem outros;
+- Se autenticar usando o comando "aws configure" que irá solicitar o "AWS Access Key ID", "AWS Secret Access Key" e o "Default region name", por exemplo, us-east-2.
 
 ---
 
 ### Criando tabela Movies no DynamoDB:
 
-Cuidado ao criar a tabela, se algum atributo estiver com nome errado você terá que criar uma nova, copiar os dados para a nova, deletar a tabela antiga e renomear a nova para o nome da antiga.
+Cuidado ao criar a tabela, se algum atributo estiver com nome errado você terá que criar uma nova, copiar os dados para a nova, deletar a tabela antiga e renomear a nova com o nome da antiga.
 
 Essa tabela será criada com 3 índices globais secundários:
-- IndexName: MoviesTitleIndex, KeySchema: Title (HASH), Year (RANGE), ProjectionType: ALL
-- IndexName: MoviesDirectorIndex, KeySchema: Director (HASH), Year (RANGE), ProjectionType: ALL
-- IndexName: MoviesProdutoraIndex, KeySchema: Produtora (HASH), Year (RANGE), ProjectionType: ALL
+- IndexName: MoviesTitleIndex, KeySchema: Title (HASH), ReleaseDate (RANGE), ProjectionType: ALL
+- IndexName: MoviesDirectorIndex, KeySchema: Director (HASH), ReleaseDate (RANGE), ProjectionType: ALL
+- IndexName: MoviesProducerIndex, KeySchema: Producer (HASH), ReleaseDate (RANGE), ProjectionType: ALL
 
-Além disso, a tabela terá uma chave primária composta pelo atributo Title como chave de partição (HASH) e nenhum atributo como chave de classificação (RANGE).
+Os índices globais secundários serão criados com a opção "ProjectionType: ALL", o que significa que todos os atributos da tabela serão incluídos no índice, e usarão o atributo ReleaseDate como chave de classificação (RANGE), não o atributo Year.
 
 ```
 aws dynamodb create-table \
